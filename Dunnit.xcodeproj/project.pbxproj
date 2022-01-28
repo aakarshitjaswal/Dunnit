@@ -9,13 +9,19 @@
 /* Begin PBXBuildFile section */
 		0417528127A4190D007BE2AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417528027A4190D007BE2AB /* AppDelegate.swift */; };
 		0417528327A4190D007BE2AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417528227A4190D007BE2AB /* SceneDelegate.swift */; };
-		0417528527A4190D007BE2AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417528427A4190D007BE2AB /* ViewController.swift */; };
 		0417528827A4190D007BE2AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0417528627A4190D007BE2AB /* Main.storyboard */; };
 		0417528A27A41910007BE2AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0417528927A41910007BE2AB /* Assets.xcassets */; };
 		0417528D27A41910007BE2AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0417528B27A41910007BE2AB /* LaunchScreen.storyboard */; };
 		0417529827A41911007BE2AB /* DunnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417529727A41911007BE2AB /* DunnitTests.swift */; };
 		041752A227A41911007BE2AB /* DunnitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041752A127A41911007BE2AB /* DunnitUITests.swift */; };
 		041752A427A41911007BE2AB /* DunnitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041752A327A41911007BE2AB /* DunnitUITestsLaunchTests.swift */; };
+		041752B127A449A5007BE2AB /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041752B027A449A5007BE2AB /* CategoryViewController.swift */; };
+		041752B827A44AD5007BE2AB /* DunnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041752B727A44AD5007BE2AB /* DunnitViewController.swift */; };
+		049290E627A44F690069A0B1 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049290E527A44F690069A0B1 /* Category.swift */; };
+		049290E827A44F880069A0B1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049290E727A44F880069A0B1 /* Item.swift */; };
+		D3A459D3BBD877D63CDEBDD6 /* Pods_DunnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70AE9F19C27A3F8C06E050CD /* Pods_DunnitTests.framework */; };
+		F901069BAC1CA6A0B5428A41 /* Pods_Dunnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5B5C3DF5B8FD09293F4B7C /* Pods_Dunnit.framework */; };
+		FE32C85B1043F8EB99C459D6 /* Pods_Dunnit_DunnitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFCDEC66557292442BEA35E /* Pods_Dunnit_DunnitUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +45,6 @@
 		0417527D27A4190D007BE2AB /* Dunnit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dunnit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0417528027A4190D007BE2AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0417528227A4190D007BE2AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0417528427A4190D007BE2AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0417528727A4190D007BE2AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0417528927A41910007BE2AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0417528C27A41910007BE2AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +54,19 @@
 		0417529D27A41911007BE2AB /* DunnitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DunnitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		041752A127A41911007BE2AB /* DunnitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DunnitUITests.swift; sourceTree = "<group>"; };
 		041752A327A41911007BE2AB /* DunnitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DunnitUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		041752B027A449A5007BE2AB /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		041752B727A44AD5007BE2AB /* DunnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DunnitViewController.swift; sourceTree = "<group>"; };
+		049290E527A44F690069A0B1 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		049290E727A44F880069A0B1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		0CC3E6DB3ACB445EDEBB0C37 /* Pods-Dunnit-DunnitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dunnit-DunnitUITests.debug.xcconfig"; path = "Target Support Files/Pods-Dunnit-DunnitUITests/Pods-Dunnit-DunnitUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2BFCDEC66557292442BEA35E /* Pods_Dunnit_DunnitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dunnit_DunnitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70AE9F19C27A3F8C06E050CD /* Pods_DunnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DunnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72A0349A2B31836476C3F163 /* Pods-DunnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DunnitTests.release.xcconfig"; path = "Target Support Files/Pods-DunnitTests/Pods-DunnitTests.release.xcconfig"; sourceTree = "<group>"; };
+		73C24171D0DBAEDF98F8248B /* Pods-Dunnit-DunnitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dunnit-DunnitUITests.release.xcconfig"; path = "Target Support Files/Pods-Dunnit-DunnitUITests/Pods-Dunnit-DunnitUITests.release.xcconfig"; sourceTree = "<group>"; };
+		74203C6E3F41AAA59C8AC658 /* Pods-Dunnit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dunnit.release.xcconfig"; path = "Target Support Files/Pods-Dunnit/Pods-Dunnit.release.xcconfig"; sourceTree = "<group>"; };
+		B78DCE5D30C7103A6323DC5C /* Pods-Dunnit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dunnit.debug.xcconfig"; path = "Target Support Files/Pods-Dunnit/Pods-Dunnit.debug.xcconfig"; sourceTree = "<group>"; };
+		DF5B5C3DF5B8FD09293F4B7C /* Pods_Dunnit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dunnit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F29AD936DB133E5855F22958 /* Pods-DunnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DunnitTests.debug.xcconfig"; path = "Target Support Files/Pods-DunnitTests/Pods-DunnitTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F901069BAC1CA6A0B5428A41 /* Pods_Dunnit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3A459D3BBD877D63CDEBDD6 /* Pods_DunnitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE32C85B1043F8EB99C459D6 /* Pods_Dunnit_DunnitUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +104,8 @@
 				0417529627A41911007BE2AB /* DunnitTests */,
 				041752A027A41911007BE2AB /* DunnitUITests */,
 				0417527E27A4190D007BE2AB /* Products */,
+				B98E3B1DFE50419D6DF90CA1 /* Pods */,
+				1BDE27FEB96E7155BEA709BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,8 +124,9 @@
 			children = (
 				0417528027A4190D007BE2AB /* AppDelegate.swift */,
 				0417528227A4190D007BE2AB /* SceneDelegate.swift */,
-				0417528427A4190D007BE2AB /* ViewController.swift */,
-				0417528627A4190D007BE2AB /* Main.storyboard */,
+				041752B627A449F8007BE2AB /* Controller */,
+				041752B527A449F0007BE2AB /* View */,
+				041752B427A449E8007BE2AB /* Model */,
 				0417528927A41910007BE2AB /* Assets.xcassets */,
 				0417528B27A41910007BE2AB /* LaunchScreen.storyboard */,
 				0417528E27A41910007BE2AB /* Info.plist */,
@@ -127,6 +151,55 @@
 			path = DunnitUITests;
 			sourceTree = "<group>";
 		};
+		041752B427A449E8007BE2AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0417528627A4190D007BE2AB /* Main.storyboard */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		041752B527A449F0007BE2AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				049290E527A44F690069A0B1 /* Category.swift */,
+				049290E727A44F880069A0B1 /* Item.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		041752B627A449F8007BE2AB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				041752B027A449A5007BE2AB /* CategoryViewController.swift */,
+				041752B727A44AD5007BE2AB /* DunnitViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1BDE27FEB96E7155BEA709BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF5B5C3DF5B8FD09293F4B7C /* Pods_Dunnit.framework */,
+				2BFCDEC66557292442BEA35E /* Pods_Dunnit_DunnitUITests.framework */,
+				70AE9F19C27A3F8C06E050CD /* Pods_DunnitTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B98E3B1DFE50419D6DF90CA1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B78DCE5D30C7103A6323DC5C /* Pods-Dunnit.debug.xcconfig */,
+				74203C6E3F41AAA59C8AC658 /* Pods-Dunnit.release.xcconfig */,
+				0CC3E6DB3ACB445EDEBB0C37 /* Pods-Dunnit-DunnitUITests.debug.xcconfig */,
+				73C24171D0DBAEDF98F8248B /* Pods-Dunnit-DunnitUITests.release.xcconfig */,
+				F29AD936DB133E5855F22958 /* Pods-DunnitTests.debug.xcconfig */,
+				72A0349A2B31836476C3F163 /* Pods-DunnitTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +207,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 041752A727A41911007BE2AB /* Build configuration list for PBXNativeTarget "Dunnit" */;
 			buildPhases = (
+				1F1ABBEA2FA9ACEDF51B3F49 /* [CP] Check Pods Manifest.lock */,
 				0417527927A4190D007BE2AB /* Sources */,
 				0417527A27A4190D007BE2AB /* Frameworks */,
 				0417527B27A4190D007BE2AB /* Resources */,
+				1053025E4FC5ED8DDC2EB8CB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +226,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 041752AA27A41911007BE2AB /* Build configuration list for PBXNativeTarget "DunnitTests" */;
 			buildPhases = (
+				A8C55BB0621BA37316FD33F6 /* [CP] Check Pods Manifest.lock */,
 				0417528F27A41911007BE2AB /* Sources */,
 				0417529027A41911007BE2AB /* Frameworks */,
 				0417529127A41911007BE2AB /* Resources */,
@@ -169,9 +245,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 041752AD27A41911007BE2AB /* Build configuration list for PBXNativeTarget "DunnitUITests" */;
 			buildPhases = (
+				709C7EC44FB557FADBA33753 /* [CP] Check Pods Manifest.lock */,
 				0417529927A41911007BE2AB /* Sources */,
 				0417529A27A41911007BE2AB /* Frameworks */,
 				0417529B27A41911007BE2AB /* Resources */,
+				20B7675373147A88EBD94300 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,14 +331,120 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1053025E4FC5ED8DDC2EB8CB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dunnit/Pods-Dunnit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dunnit/Pods-Dunnit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dunnit/Pods-Dunnit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1F1ABBEA2FA9ACEDF51B3F49 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dunnit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		20B7675373147A88EBD94300 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dunnit-DunnitUITests/Pods-Dunnit-DunnitUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dunnit-DunnitUITests/Pods-Dunnit-DunnitUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dunnit-DunnitUITests/Pods-Dunnit-DunnitUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		709C7EC44FB557FADBA33753 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dunnit-DunnitUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8C55BB0621BA37316FD33F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DunnitTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0417527927A4190D007BE2AB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0417528527A4190D007BE2AB /* ViewController.swift in Sources */,
+				041752B127A449A5007BE2AB /* CategoryViewController.swift in Sources */,
+				041752B827A44AD5007BE2AB /* DunnitViewController.swift in Sources */,
 				0417528127A4190D007BE2AB /* AppDelegate.swift in Sources */,
 				0417528327A4190D007BE2AB /* SceneDelegate.swift in Sources */,
+				049290E827A44F880069A0B1 /* Item.swift in Sources */,
+				049290E627A44F690069A0B1 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +618,7 @@
 		};
 		041752A827A41911007BE2AB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B78DCE5D30C7103A6323DC5C /* Pods-Dunnit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -462,6 +647,7 @@
 		};
 		041752A927A41911007BE2AB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74203C6E3F41AAA59C8AC658 /* Pods-Dunnit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -490,6 +676,7 @@
 		};
 		041752AB27A41911007BE2AB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F29AD936DB133E5855F22958 /* Pods-DunnitTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,6 +697,7 @@
 		};
 		041752AC27A41911007BE2AB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72A0349A2B31836476C3F163 /* Pods-DunnitTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -530,6 +718,7 @@
 		};
 		041752AE27A41911007BE2AB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CC3E6DB3ACB445EDEBB0C37 /* Pods-Dunnit-DunnitUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -548,6 +737,7 @@
 		};
 		041752AF27A41911007BE2AB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73C24171D0DBAEDF98F8248B /* Pods-Dunnit-DunnitUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
