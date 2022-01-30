@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JcJ-xt-UGp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qgw-Dm-eVG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -31,6 +31,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Dunnit" id="4Qt-Gf-UwL">
+                        <barButtonItem key="backBarButtonItem" title=" " id="oLU-Ll-6RO"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Q2X-tK-qpM">
                             <connections>
                                 <action selector="addButtonPressed:" destination="nh9-Ef-3EZ" id="LNr-8N-MWF"/>
@@ -38,37 +39,19 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="5kW-LW-o2V" kind="showDetail" identifier="toItems" id="Vt9-Yy-rI1"/>
+                        <segue destination="5kW-LW-o2V" kind="show" identifier="toItems" id="Vt9-Yy-rI1"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RcO-5K-Fx5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1102.8985507246377" y="-577.23214285714278"/>
+            <point key="canvasLocation" x="2923.1884057971015" y="-577.23214285714278"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ztE-3R-F8Q">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JcJ-xt-UGp" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xr5-Q4-Okc">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="nh9-Ef-3EZ" kind="relationship" relationship="rootViewController" id="a9V-in-QQo"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kiw-oA-P9D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="192.75362318840581" y="-577.23214285714278"/>
-        </scene>
-        <!--Dunnit View Category-->
+        <!--Dunnit-->
         <scene sceneID="zHQ-zE-Ej6">
             <objects>
-                <tableViewController id="5kW-LW-o2V" customClass="DunnitViewCategory" customModule="Dunnit" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="5kW-LW-o2V" customClass="ItemViewController" customModule="Dunnit" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="lHf-l8-MFg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -86,11 +69,31 @@
                             <outlet property="delegate" destination="5kW-LW-o2V" id="hXk-Ie-Bth"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="rKX-TK-ICW"/>
+                    <navigationItem key="navigationItem" title="Dunnit" id="70A-hL-Ga8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VMh-Rg-eYZ"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpw-8i-YcZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2006" y="-577"/>
+            <point key="canvasLocation" x="3826.0869565217395" y="-577.23214285714278"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mGg-lp-Byx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qgw-Dm-eVG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FVY-AC-wJh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nh9-Ef-3EZ" kind="relationship" relationship="rootViewController" id="dOu-eH-4DM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yJX-fc-ilu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2013.0434782608697" y="-577.23214285714278"/>
         </scene>
     </scenes>
     <resources>

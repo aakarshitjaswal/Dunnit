@@ -16,7 +16,7 @@
 		041752A227A41911007BE2AB /* DunnitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041752A127A41911007BE2AB /* DunnitUITests.swift */; };
 		041752A427A41911007BE2AB /* DunnitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041752A327A41911007BE2AB /* DunnitUITestsLaunchTests.swift */; };
 		041752B127A449A5007BE2AB /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041752B027A449A5007BE2AB /* CategoryViewController.swift */; };
-		041752B827A44AD5007BE2AB /* DunnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041752B727A44AD5007BE2AB /* DunnitViewController.swift */; };
+		041752B827A44AD5007BE2AB /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041752B727A44AD5007BE2AB /* ItemViewController.swift */; };
 		049290E627A44F690069A0B1 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049290E527A44F690069A0B1 /* Category.swift */; };
 		049290E827A44F880069A0B1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049290E727A44F880069A0B1 /* Item.swift */; };
 		D3A459D3BBD877D63CDEBDD6 /* Pods_DunnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70AE9F19C27A3F8C06E050CD /* Pods_DunnitTests.framework */; };
@@ -55,7 +55,7 @@
 		041752A127A41911007BE2AB /* DunnitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DunnitUITests.swift; sourceTree = "<group>"; };
 		041752A327A41911007BE2AB /* DunnitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DunnitUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		041752B027A449A5007BE2AB /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
-		041752B727A44AD5007BE2AB /* DunnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DunnitViewController.swift; sourceTree = "<group>"; };
+		041752B727A44AD5007BE2AB /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		049290E527A44F690069A0B1 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		049290E727A44F880069A0B1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		0CC3E6DB3ACB445EDEBB0C37 /* Pods-Dunnit-DunnitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dunnit-DunnitUITests.debug.xcconfig"; path = "Target Support Files/Pods-Dunnit-DunnitUITests/Pods-Dunnit-DunnitUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -172,7 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				041752B027A449A5007BE2AB /* CategoryViewController.swift */,
-				041752B727A44AD5007BE2AB /* DunnitViewController.swift */,
+				041752B727A44AD5007BE2AB /* ItemViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -440,7 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				041752B127A449A5007BE2AB /* CategoryViewController.swift in Sources */,
-				041752B827A44AD5007BE2AB /* DunnitViewController.swift in Sources */,
+				041752B827A44AD5007BE2AB /* ItemViewController.swift in Sources */,
 				0417528127A4190D007BE2AB /* AppDelegate.swift in Sources */,
 				0417528327A4190D007BE2AB /* SceneDelegate.swift in Sources */,
 				049290E827A44F880069A0B1 /* Item.swift in Sources */,

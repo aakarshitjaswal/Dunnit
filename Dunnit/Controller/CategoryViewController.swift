@@ -63,7 +63,7 @@ class CategoryViewController: UITableViewController {
         
         
     }
-    
+
 
     
     //MARK: Data Manipulation
@@ -88,10 +88,25 @@ class CategoryViewController: UITableViewController {
             print(error)
         }
     }
-
-
     
+    
+    //MARK: TableView Delegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      performSegue(withIdentifier: "toItems", sender: self)
+    
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let currentIndexPath = tableView.indexPathForSelectedRow!
+        let destinationVC = segue.destination as! ItemViewController
+        if let categories = categories {
+            destinationVC.selectedCategory = categories[currentIndexPath.row]
+        }
+  }
+
 }
 
-//MARK: TableView Delegate
+
+
 

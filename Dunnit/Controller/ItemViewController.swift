@@ -7,12 +7,18 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
-class DunnitViewCategory: UITableViewController {
+class ItemViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
+    
+    var selectedCategory = Category()
+    
+    
     
 }
 
