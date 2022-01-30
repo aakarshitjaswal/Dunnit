@@ -81,14 +81,31 @@ class ItemViewController: UITableViewController {
         
     }
     
+}
+
+//MARK: SearchBar Delegate
+
+extension ItemViewController: UISearchBarDelegate {
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if searchBar.text!.count > 0 {
+        items = items?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateAdded", ascending: true)
+        } else {
+            loadData()
+        }
+        tableView.reloadData()
+        
+    }
     
-    
-    
-    
-    
-    
-    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            loadData()
+        } else {
+            items = items?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateAdded", ascending: true)
+            tableView.reloadData()
+        }
+    }
+
 }
 
 

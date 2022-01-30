@@ -104,7 +104,6 @@ class CategoryViewController: UITableViewController {
             destinationVC.selectedCategory = categories[currentIndexPath.row]
         }
   }
-
 }
 
 
