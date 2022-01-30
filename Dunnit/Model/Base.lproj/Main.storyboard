@@ -70,7 +70,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Dunnit" id="70A-hL-Ga8">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VMh-Rg-eYZ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VMh-Rg-eYZ">
+                            <connections>
+                                <action selector="addItemPressed:" destination="5kW-LW-o2V" id="tpq-KR-Idv"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpw-8i-YcZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
