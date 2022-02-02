@@ -8,13 +8,18 @@
 import Foundation
 import UIKit
 import RealmSwift
+import SwipeCellKit
 
 class ItemViewController: UITableViewController {
     
     let realm = try! Realm()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tapGesture)
+        tapGesture.cancelsTouchesInView = false
+
+        loadData()
     }
     
     var selectedCategory = Category() {
@@ -32,7 +37,8 @@ class ItemViewController: UITableViewController {
     //MARK: TableView Data Source
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! SwipeTableViewCell
+        cell.delegate = self
         
         cell.textLabel?.text = items?[indexPath.row].title ?? "No items added yet"
         
@@ -93,7 +99,6 @@ class ItemViewController: UITableViewController {
                 print(error)
             }
         }
-        
         tableView.deselectRow(at: indexPath, animated: true)
         tableView.reloadData()
     }
@@ -104,7 +109,7 @@ class ItemViewController: UITableViewController {
 //MARK: SearchBar Delegate
 
 extension ItemViewController: UISearchBarDelegate {
-    
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if searchBar.text!.count > 0 {
             items = items?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateAdded", ascending: true)
@@ -131,6 +136,33 @@ extension ItemViewController: UISearchBarDelegate {
         }
     }
 }
+
+extension ItemViewController: SwipeTableViewCellDelegate {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+        print(indexPath)
+        
+        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+            do {
+                
+                    try self.realm.write {
+                        self.realm.delete(self.selectedCategory.items[indexPath.row])
+                        self.loadData()
+                    
+                
+                }
+            }   catch {
+                print(error)
+            }
+        }
+        
+        // customize the action appearance
+        deleteAction.image = UIImage(named: "delete")
+        
+        return [deleteAction]
+    }
+}
+
 
 
 

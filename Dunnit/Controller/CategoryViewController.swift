@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import RealmSwift
+import SwipeCellKit
 
 class CategoryViewController: UITableViewController {
     
@@ -17,7 +18,7 @@ class CategoryViewController: UITableViewController {
     }
     
     let realm = try! Realm()
-
+    
     var categories: Results<Category>?
     
     //MARK: TableView Datasource
@@ -28,7 +29,8 @@ class CategoryViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "categorycell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "categorycell", for: indexPath) as! SwipeTableViewCell
+        cell.delegate = self
         
         cell.textLabel?.text = categories?[indexPath.row].name ?? "No category added yet"
         return cell
@@ -63,8 +65,8 @@ class CategoryViewController: UITableViewController {
         
         
     }
-
-
+    
+    
     
     //MARK: Data Manipulation
     
@@ -93,8 +95,8 @@ class CategoryViewController: UITableViewController {
     //MARK: TableView Delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      performSegue(withIdentifier: "toItems", sender: self)
-    
+        performSegue(withIdentifier: "toItems", sender: self)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -103,7 +105,38 @@ class CategoryViewController: UITableViewController {
         if let categories = categories {
             destinationVC.selectedCategory = categories[currentIndexPath.row]
         }
-  }
+    }
+}
+//MARK: SwipeTableView Delegate
+
+
+extension CategoryViewController: SwipeTableViewCellDelegate {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+        print(indexPath)
+        
+        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+            do {
+                if let currentCategory = self.categories?[indexPath.row] {
+                    print(currentCategory.name)
+                    try self.realm.write {
+                        self.realm.delete(currentCategory.items)
+                        self.realm.delete(currentCategory)
+                 }
+                    self.loadData()
+
+                
+                }
+            }   catch {
+                print(error)
+            }
+        }
+        
+        // customize the action appearance
+        deleteAction.image = UIImage(named: "delete")
+        
+        return [deleteAction]
+    }
 }
 
 
