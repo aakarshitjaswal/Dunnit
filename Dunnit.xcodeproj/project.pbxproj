@@ -19,6 +19,7 @@
 		041752B827A44AD5007BE2AB /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041752B727A44AD5007BE2AB /* ItemViewController.swift */; };
 		049290E627A44F690069A0B1 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049290E527A44F690069A0B1 /* Category.swift */; };
 		049290E827A44F880069A0B1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049290E727A44F880069A0B1 /* Item.swift */; };
+		04EAB6F727ABB9D300BB8F4F /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EAB6F627ABB9D300BB8F4F /* SwipeTableViewController.swift */; };
 		D3A459D3BBD877D63CDEBDD6 /* Pods_DunnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70AE9F19C27A3F8C06E050CD /* Pods_DunnitTests.framework */; };
 		F901069BAC1CA6A0B5428A41 /* Pods_Dunnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5B5C3DF5B8FD09293F4B7C /* Pods_Dunnit.framework */; };
 		FE32C85B1043F8EB99C459D6 /* Pods_Dunnit_DunnitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFCDEC66557292442BEA35E /* Pods_Dunnit_DunnitUITests.framework */; };
@@ -58,6 +59,7 @@
 		041752B727A44AD5007BE2AB /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		049290E527A44F690069A0B1 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		049290E727A44F880069A0B1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		04EAB6F627ABB9D300BB8F4F /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		0CC3E6DB3ACB445EDEBB0C37 /* Pods-Dunnit-DunnitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dunnit-DunnitUITests.debug.xcconfig"; path = "Target Support Files/Pods-Dunnit-DunnitUITests/Pods-Dunnit-DunnitUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2BFCDEC66557292442BEA35E /* Pods_Dunnit_DunnitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dunnit_DunnitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70AE9F19C27A3F8C06E050CD /* Pods_DunnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DunnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +175,7 @@
 			children = (
 				041752B027A449A5007BE2AB /* CategoryViewController.swift */,
 				041752B727A44AD5007BE2AB /* ItemViewController.swift */,
+				04EAB6F627ABB9D300BB8F4F /* SwipeTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				041752B127A449A5007BE2AB /* CategoryViewController.swift in Sources */,
 				041752B827A44AD5007BE2AB /* ItemViewController.swift in Sources */,
 				0417528127A4190D007BE2AB /* AppDelegate.swift in Sources */,
+				04EAB6F727ABB9D300BB8F4F /* SwipeTableViewController.swift in Sources */,
 				0417528327A4190D007BE2AB /* SceneDelegate.swift in Sources */,
 				049290E827A44F880069A0B1 /* Item.swift in Sources */,
 				049290E627A44F690069A0B1 /* Category.swift in Sources */,

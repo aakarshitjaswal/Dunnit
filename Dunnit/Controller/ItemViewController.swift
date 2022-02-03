@@ -8,9 +8,8 @@
 import Foundation
 import UIKit
 import RealmSwift
-import SwipeCellKit
 
-class ItemViewController: UITableViewController {
+class ItemViewController: SwipeTableViewController, UITextFieldDelegate {
     
     let realm = try! Realm()
     override func viewDidLoad() {
@@ -18,7 +17,7 @@ class ItemViewController: UITableViewController {
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
         tapGesture.cancelsTouchesInView = false
-
+        
         loadData()
     }
     
@@ -30,15 +29,15 @@ class ItemViewController: UITableViewController {
     
     var items: Results<Item>?
     
+
+    
+    //MARK: TableView Data Source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         items?.count ?? 0
     }
     
-    //MARK: TableView Data Source
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! SwipeTableViewCell
-        cell.delegate = self
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
         cell.textLabel?.text = items?[indexPath.row].title ?? "No items added yet"
         
@@ -47,14 +46,34 @@ class ItemViewController: UITableViewController {
         return cell
     }
     
+    //MARK: Delete Item
+    override func updateModel(indexPath: IndexPath) -> Bool {
+        
+                do {
+                    try realm.write {
+                        realm.delete(selectedCategory.items[indexPath.row])
+                    }
+                } catch {
+                    print("Error occured while deleting item \(error)")
+                }
+        loadData()
+        return true
+    }
+
+    
+    
+    
+    //MARK: Add Item
     @IBAction func addItemPressed(_ sender: UIBarButtonItem) {
-        var textField = UITextField()
+        
+        
+        var alertTextField = UITextField()
         
         let alert = UIAlertController(title: "Add a new Dunnit", message: "", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Add", style: .default) { action in
             let newItem = Item()
-            newItem.title = textField.text!
+            newItem.title = alertTextField.text!
             do {
                 try self.realm.write {
                     self.selectedCategory.items.append(newItem)
@@ -67,16 +86,32 @@ class ItemViewController: UITableViewController {
             
         }
         
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        action.isEnabled = false
         alert.addAction(action)
         
-        alert.addTextField { alertTextField in
-            alertTextField.placeholder = "Type here"
-            textField = alertTextField
-        }
-        
+        alert.addTextField(configurationHandler: { (textField) in
+                textField.placeholder = "Your name"
+                textField.autocapitalizationType = .words
+            textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+                alertTextField = textField
+        })
         present(alert, animated: true, completion: nil)
         
     }
+    
+    func updateAction(action: UIAlertAction, alert: UIAlertController) {
+        alert.addAction(action)
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if let alert = presentedViewController as? UIAlertController,
+                let action = alert.actions.last,
+                let text = textField.text {
+                action.isEnabled = text.count > 0
+            }
+    }
+    
     
     
     //MARK: TableView Data Manipulation
@@ -136,35 +171,6 @@ extension ItemViewController: UISearchBarDelegate {
         }
     }
 }
-
-extension ItemViewController: SwipeTableViewCellDelegate {
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
-        guard orientation == .right else { return nil }
-        print(indexPath)
-        
-        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
-            do {
-                
-                    try self.realm.write {
-                        self.realm.delete(self.selectedCategory.items[indexPath.row])
-                        self.loadData()
-                    
-                
-                }
-            }   catch {
-                print(error)
-            }
-        }
-        
-        // customize the action appearance
-        deleteAction.image = UIImage(named: "delete")
-        
-        return [deleteAction]
-    }
-}
-
-
-
 
 
 

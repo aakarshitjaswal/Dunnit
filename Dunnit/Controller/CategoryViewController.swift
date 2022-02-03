@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 import RealmSwift
-import SwipeCellKit
+//import SwipeCellKit
 
-class CategoryViewController: UITableViewController {
+class CategoryViewController: SwipeTableViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +29,31 @@ class CategoryViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "categorycell", for: indexPath) as! SwipeTableViewCell
-        cell.delegate = self
-        
-        cell.textLabel?.text = categories?[indexPath.row].name ?? "No category added yet"
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        cell.textLabel?.text = categories?[indexPath.row].name ?? "New category"
         return cell
         
     }
+    
+    //MARK: Swipe to Delete
+    override func updateModel(indexPath: IndexPath) -> Bool {
+        guard let category = categories?[indexPath.row] else {
+            return false
+        }
+        do {
+            try realm.write {
+//                realm.delete(category.items)
+                realm.delete(category)
+            }
+        } catch {
+            print("Error occured while Updating information \(error)")
+        }
+        
+        loadData()
+        
+        return true
+    }
+
     
     
     //MARK: Add a category
@@ -54,18 +72,36 @@ class CategoryViewController: UITableViewController {
             self.loadData()
         }
         
+        action.isEnabled = false
+
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
         alert.addTextField { alertTextField in
             alertTextField.placeholder = "Type category name here"
+            alertTextField.autocapitalizationType = .words
+            alertTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
             textField = alertTextField
         }
         
+        
         alert.addAction(action)
+       
         
         present(alert, animated: true, completion: nil)
         
         
     }
     
+    //MARK: TextFieldDidChange
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if let alert = presentedViewController as? UIAlertController,
+           let action = alert.actions.last,
+           let text = textField.text {
+               action.isEnabled = text.count > 0
+           }
+    }
     
     
     //MARK: Data Manipulation
@@ -107,38 +143,6 @@ class CategoryViewController: UITableViewController {
         }
     }
 }
-//MARK: SwipeTableView Delegate
-
-
-extension CategoryViewController: SwipeTableViewCellDelegate {
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
-        guard orientation == .right else { return nil }
-        print(indexPath)
-        
-        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
-            do {
-                if let currentCategory = self.categories?[indexPath.row] {
-                    print(currentCategory.name)
-                    try self.realm.write {
-                        self.realm.delete(currentCategory.items)
-                        self.realm.delete(currentCategory)
-                 }
-                    self.loadData()
-
-                
-                }
-            }   catch {
-                print(error)
-            }
-        }
-        
-        // customize the action appearance
-        deleteAction.image = UIImage(named: "delete")
-        
-        return [deleteAction]
-    }
-}
-
 
 
 
