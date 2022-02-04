@@ -7,7 +7,7 @@ target 'Dunnit' do
 
   # Pods for Dunnit
 pod 'RealmSwift'
-pod 'SwipeCellKit'
+pod 'ChameleonFramework/Swift', :git => 'https://github.com/wowansm/Chameleon.git', :branch => 'swift5'
 
   target 'DunnitTests' do
     inherit! :search_paths

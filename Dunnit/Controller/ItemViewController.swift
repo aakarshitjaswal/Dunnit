@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 import RealmSwift
+import ChameleonFramework
+import DeveloperToolsSupport
 
 class ItemViewController: SwipeTableViewController, UITextFieldDelegate {
     
@@ -21,6 +23,39 @@ class ItemViewController: SwipeTableViewController, UITextFieldDelegate {
         loadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        title = selectedCategory.name
+        if let categoryColor = UIColor(hexString: selectedCategory.color) {
+            searchBar.backgroundColor = categoryColor
+            searchBar.searchBarStyle = .minimal
+          
+            
+            
+            //To change the colour of status bar
+            let navBarAppearance = UINavigationBarAppearance()
+            let navBar = navigationController?.navigationBar
+            navBarAppearance.configureWithOpaqueBackground()
+            
+            //Contrast color from Chamaleon to set the color of the text based on the category color
+            let contrastColour = ContrastColorOf(categoryColor, returnFlat: true)
+            
+            //SearchBar Placeholder Colour Change
+            searchBar.searchTextField.attributedPlaceholder = NSAttributedString(
+                string: "Search",
+                attributes: [.foregroundColor: contrastColour]
+            )
+            searchBar.searchTextField.textColor = contrastColour
+            
+            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: contrastColour]
+            navBarAppearance.titleTextAttributes =  [.foregroundColor: contrastColour]
+            navBarAppearance.shadowColor = .none
+            navBarAppearance.backgroundColor = categoryColor
+            navBar?.tintColor = contrastColour
+            navBar?.standardAppearance = navBarAppearance
+            navBar?.scrollEdgeAppearance = navBarAppearance
+        }
+    }
+    
     var selectedCategory = Category() {
         didSet {
             loadData()
@@ -28,6 +63,8 @@ class ItemViewController: SwipeTableViewController, UITextFieldDelegate {
     }
     
     var items: Results<Item>?
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     
 
     
@@ -41,6 +78,13 @@ class ItemViewController: SwipeTableViewController, UITextFieldDelegate {
         
         cell.textLabel?.text = items?[indexPath.row].title ?? "No items added yet"
         
+        cell.backgroundColor = UIColor(hexString: selectedCategory.color)?.darken(byPercentage: CGFloat(indexPath.row)/CGFloat(items!.count))
+        
+        
+        if let color = cell.backgroundColor {
+            cell.textLabel?.textColor = ContrastColorOf(color, returnFlat: true)
+            cell.tintColor = ContrastColorOf(color, returnFlat: true)
+        }
         cell.accessoryType = items?[indexPath.row].done ?? false ? .checkmark : .none
         
         return cell
@@ -74,6 +118,9 @@ class ItemViewController: SwipeTableViewController, UITextFieldDelegate {
         let action = UIAlertAction(title: "Add", style: .default) { action in
             let newItem = Item()
             newItem.title = alertTextField.text!
+           
+            
+            
             do {
                 try self.realm.write {
                     self.selectedCategory.items.append(newItem)
@@ -100,6 +147,9 @@ class ItemViewController: SwipeTableViewController, UITextFieldDelegate {
         
     }
     
+    
+    //MARK: Delete Cell
+
     func updateAction(action: UIAlertAction, alert: UIAlertController) {
         alert.addAction(action)
     }
@@ -114,8 +164,7 @@ class ItemViewController: SwipeTableViewController, UITextFieldDelegate {
     
     
     
-    //MARK: TableView Data Manipulation
-    
+    //MARK: Load Persistent Data
     func loadData() {
         items = selectedCategory.items.sorted(byKeyPath: "title", ascending: true)
         tableView.reloadData()
@@ -171,8 +220,6 @@ extension ItemViewController: UISearchBarDelegate {
         }
     }
 }
-
-
 
 
 

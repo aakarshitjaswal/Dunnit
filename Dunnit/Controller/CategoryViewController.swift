@@ -8,14 +8,41 @@
 import Foundation
 import UIKit
 import RealmSwift
-//import SwipeCellKit
+import ChameleonFramework
 
 class CategoryViewController: SwipeTableViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+        self.tableView.rowHeight = 80
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let theColourWeAreUsing = FlatGrayDark()
+        
+        let navBarAppearance = UINavigationBarAppearance()
+        let navBar = navigationController?.navigationBar
+        let navItem = navigationController?.navigationItem
+        navBarAppearance.configureWithOpaqueBackground()
+
+        let contrastColour = ContrastColorOf(theColourWeAreUsing, returnFlat: true)
+
+        navBarAppearance.titleTextAttributes = [.foregroundColor: contrastColour]
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: contrastColour]
+        navBarAppearance.backgroundColor = theColourWeAreUsing
+//        navItem?.rightBarButtonItem?.tintColor = contrastColour
+        navBar?.tintColor = contrastColour
+        navBar?.standardAppearance = navBarAppearance
+        navBar?.scrollEdgeAppearance = navBarAppearance
+
+        self.navigationController?.navigationBar.setNeedsLayout()
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
     
     let realm = try! Realm()
     
@@ -31,6 +58,10 @@ class CategoryViewController: SwipeTableViewController, UITextFieldDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         cell.textLabel?.text = categories?[indexPath.row].name ?? "New category"
+        cell.backgroundColor = UIColor(hexString: categories?[indexPath.row].color ?? "#ffffff")
+        if let color = cell.backgroundColor {
+            cell.textLabel?.textColor = ContrastColorOf(color, returnFlat: true)
+        }
         return cell
         
     }
@@ -42,7 +73,7 @@ class CategoryViewController: SwipeTableViewController, UITextFieldDelegate {
         }
         do {
             try realm.write {
-//                realm.delete(category.items)
+                //                realm.delete(category.items)
                 realm.delete(category)
             }
         } catch {
@@ -53,7 +84,7 @@ class CategoryViewController: SwipeTableViewController, UITextFieldDelegate {
         
         return true
     }
-
+    
     
     
     //MARK: Add a category
@@ -67,13 +98,14 @@ class CategoryViewController: SwipeTableViewController, UITextFieldDelegate {
             
             let newCategory = Category()
             newCategory.name = textField.text!
+            newCategory.color = UIColor.randomFlat().hexValue()
             self.saveData(category: newCategory)
             
             self.loadData()
         }
         
         action.isEnabled = false
-
+        
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
@@ -86,7 +118,7 @@ class CategoryViewController: SwipeTableViewController, UITextFieldDelegate {
         
         
         alert.addAction(action)
-       
+        
         
         present(alert, animated: true, completion: nil)
         
@@ -99,8 +131,8 @@ class CategoryViewController: SwipeTableViewController, UITextFieldDelegate {
         if let alert = presentedViewController as? UIAlertController,
            let action = alert.actions.last,
            let text = textField.text {
-               action.isEnabled = text.count > 0
-           }
+            action.isEnabled = text.count > 0
+        }
     }
     
     

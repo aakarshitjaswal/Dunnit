@@ -11,7 +11,8 @@ class SwipeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.rowHeight = 50
+        tableView.separatorStyle = .none
     }
     
     //MARK: Datasource
@@ -37,8 +38,9 @@ class SwipeTableViewController: UITableViewController {
             completionHandler(result)
         }
      
-        // Set background color
+        // Set background color & image
         action.backgroundColor = .systemRed
+        action.image = UIImage(systemName: "trash")
      
         // Create configuration
         let configuration = UISwipeActionsConfiguration(actions: [action])

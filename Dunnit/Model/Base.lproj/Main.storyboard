@@ -84,9 +84,12 @@
                                     <action selector="addItemPressed:" destination="5kW-LW-o2V" id="tpq-KR-Idv"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="flowchart" catalog="system" id="YIL-ku-iJh"/>
+                            <barButtonItem title="Item" image="slider.horizontal.3" catalog="system" id="YIL-ku-iJh"/>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="8TP-Jb-IBQ" id="Wfj-Na-fLE"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpw-8i-YcZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,8 +100,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qgw-Dm-eVG" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FVY-AC-wJh">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="FVY-AC-wJh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -112,7 +115,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="flowchart" catalog="system" width="128" height="125"/>
+        <image name="slider.horizontal.3" catalog="system" width="128" height="100"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
